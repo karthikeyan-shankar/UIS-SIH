@@ -1,0 +1,26 @@
+[
+  {
+    "event_id": "evt_001",
+    "event_type": "pothole",
+    "timestamp": "2026-08-30T09:00:00Z",
+    "gps": {
+      "lat": 11.0168,
+      "lng": 76.9558
+    },
+    "bus_id": "bus_04",
+    "severity": "high",
+    "confidence": 0.95
+  },
+  {
+    "event_id": "evt_002",
+    "event_type": "vehicle_count",
+    "timestamp": "2026-08-30T09:05:00Z",
+    "gps": {
+      "lat": 11.0200,
+      "lng": 76.9600
+    },
+    "bus_id": "bus_04",
+    "severity": "medium",
+    "confidence": 0.88
+  }
+]

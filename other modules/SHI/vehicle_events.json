@@ -1,0 +1,19 @@
+[
+    {
+        "event_id": "evt_veh_750",
+        "event_type": "vehicle_count",
+        "timestamp": "2026-08-30T13:45:28.785555Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "car": 8,
+            "bus": 2,
+            "bike": 0,
+            "truck": 1
+        },
+        "confidence": 0.88
+    }
+]

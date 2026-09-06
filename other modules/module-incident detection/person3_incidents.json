@@ -1,0 +1,32 @@
+[
+  {
+    "event_id": "evt_ac0cd2",
+    "event_type": "incident_hitandrun",
+    "timestamp": "2026-08-30T08:51:34Z",
+    "gps": {
+      "lat": 11.0168,
+      "lng": 76.9558
+    },
+    "bus_id": "bus_04",
+    "data": {
+      "plate_number": "02HN18281",
+      "incident_type": "Hit and Run Offender"
+    },
+    "confidence": 0.71
+  },
+  {
+    "event_id": "evt_e18017",
+    "event_type": "incident_hitandrun",
+    "timestamp": "2026-08-30T08:51:34Z",
+    "gps": {
+      "lat": 11.0168,
+      "lng": 76.9558
+    },
+    "bus_id": "bus_04",
+    "data": {
+      "plate_number": "KA02MM9091",
+      "incident_type": "Hit and Run Offender"
+    },
+    "confidence": 1.0
+  }
+]

@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Urban Intelligence Platform</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+    <!-- Leaflet (free, no API key) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', system-ui, sans-serif; background: #0f172a; color: #e2e8f0; height: 100vh; overflow: hidden; display: flex; flex-direction: column; }
+
+        /* ─── Header ─── */
+        .header { display: flex; align-items: center; justify-content: space-between; padding: 0 24px; height: 56px; background: #1e293b; border-bottom: 1px solid #334155; flex-shrink: 0; }
+        .header-left { display: flex; align-items: center; gap: 12px; }
+        .header-left h1 { font-size: 16px; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; color: #f1f5f9; }
+        .header-left .logo-icon { color: #10b981; font-size: 28px; }
+
+        /* ─── Tabs ─── */
+        .tabs { display: flex; gap: 4px; margin-left: 40px; }
+        .tab-btn { background: transparent; border: none; color: #94a3b8; padding: 8px 20px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; border-radius: 8px; transition: all 0.2s; }
+        .tab-btn:hover { color: #e2e8f0; background: #334155; }
+        .tab-btn.active { background: #10b981; color: #fff; }
+
+        /* ─── Layout ─── */
+        .main { flex: 1; display: flex; flex-direction: column; overflow: hidden; padding: 16px; gap: 12px; }
+        .tab-panel { display: none; flex: 1; flex-direction: column; gap: 12px; overflow: hidden; }
+        .tab-panel.active { display: flex; }
+
+        /* ─── KPI Row ─── */
+        .kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; flex-shrink: 0; }
+        .kpi-card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 16px 20px; position: relative; }
+        .kpi-card .accent { position: absolute; left: 0; top: 0; bottom: 0; width: 3px; border-radius: 12px 0 0 12px; }
+        .kpi-label { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #64748b; margin-bottom: 8px; }
+        .kpi-value { font-family: 'JetBrains Mono', monospace; font-size: 28px; font-weight: 700; color: #f1f5f9; }
+        .kpi-sub { font-size: 11px; color: #64748b; margin-top: 4px; font-family: 'JetBrains Mono', monospace; }
+        .kpi-card.critical { border-color: #ef444480; }
+        .kpi-card.critical .kpi-value { color: #ef4444; }
+
+        /* ─── Pipeline Bar ─── */
+        .pipeline { background: #1e293b; border: 1px solid #334155; border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; gap: 16px; flex-shrink: 0; }
+        .pipeline-label { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #64748b; white-space: nowrap; }
+        .pipeline-bar { flex: 1; height: 20px; background: #334155; border-radius: 10px; overflow: hidden; display: flex; }
+        .pipe-seg { height: 100%; display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: 700; font-family: 'JetBrains Mono', monospace; transition: width 0.5s ease; }
+        .pipe-raw { background: #475569; color: #94a3b8; }
+        .pipe-verified { background: #0d9488; color: #fff; }
+        .pipe-ranked { background: #10b981; color: #fff; }
+
+        /* ─── Map + Alerts split ─── */
+        .content-row { flex: 1; display: flex; gap: 12px; min-height: 0; }
+        .map-container { flex: 1; border-radius: 12px; overflow: hidden; border: 1px solid #334155; position: relative; }
+        #map { width: 100%; height: 100%; }
+        .leaflet-container { background: #1e293b !important; }
+
+        /* ─── Filter Bar ─── */
+        .filter-bar { position: absolute; top: 12px; right: 12px; z-index: 1000; display: flex; gap: 6px; }
+        .filter-chip { padding: 5px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; color: #fff; border: 2px solid transparent; cursor: pointer; transition: all 0.15s; opacity: 1; }
+        .filter-chip.off { opacity: 0.3; }
+
+        /* ─── Alerts Sidebar ─── */
+        .alerts-panel { width: 320px; background: #1e293b; border: 1px solid #334155; border-radius: 12px; display: flex; flex-direction: column; overflow: hidden; flex-shrink: 0; }
+        .alerts-header { padding: 14px 16px; border-bottom: 1px solid #334155; display: flex; justify-content: space-between; align-items: center; }
+        .alerts-header h2 { font-size: 14px; font-weight: 700; }
+        .live-badge { background: #ef4444; color: #fff; font-size: 9px; font-weight: 700; padding: 2px 8px; border-radius: 10px; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.5; } }
+        .alerts-list { flex: 1; overflow-y: auto; padding: 10px; display: flex; flex-direction: column; gap: 8px; }
+        .alert-card { background: #0f172a; border: 1px solid #334155; border-radius: 10px; padding: 12px; cursor: pointer; transition: border-color 0.2s; position: relative; }
+        .alert-card:hover { border-color: #64748b; }
+        .alert-card .left-bar { position: absolute; left: 0; top: 6px; bottom: 6px; width: 3px; border-radius: 3px; }
+        .alert-type { font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+        .alert-score { font-size: 10px; color: #64748b; font-family: 'JetBrains Mono', monospace; }
+        .alert-desc { font-size: 12px; color: #94a3b8; margin-top: 6px; line-height: 1.5; }
+        .alert-plate { font-family: 'JetBrains Mono', monospace; background: #334155; color: #facc15; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; display: inline-block; margin-top: 6px; letter-spacing: 0.1em; }
+
+        /* ─── Scrollbar ─── */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+
+        /* ─── Incidents Tab ─── */
+        .incidents-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; overflow-y: auto; padding-right: 4px; }
+        .incident-card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 16px; }
+        .incident-card .type-badge { display: inline-block; padding: 3px 10px; border-radius: 6px; font-size: 10px; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.05em; }
+        .incident-meta { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #94a3b8; margin-top: 10px; line-height: 1.8; }
+        .incident-meta strong { color: #64748b; }
+
+        /* ─── Reports Tab ─── */
+        .reports-content { overflow-y: auto; padding-right: 4px; }
+        .report-section { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 24px; margin-bottom: 16px; }
+        .report-section h2 { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+        .report-section p { color: #94a3b8; font-size: 14px; line-height: 1.6; margin-bottom: 20px; }
+        .bandwidth-demo { display: flex; gap: 20px; align-items: stretch; }
+        .bw-card { flex: 1; background: #0f172a; border: 1px solid #334155; border-radius: 12px; padding: 20px; }
+        .bw-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 12px; }
+        .bw-card .big-num { font-family: 'JetBrains Mono', monospace; font-size: 36px; font-weight: 700; }
+        .plate-mock { background: #1e293b; border: 2px solid #475569; border-radius: 10px; padding: 16px; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+        .plate-text { font-family: 'JetBrains Mono', monospace; font-size: 20px; font-weight: 700; background: #facc15; color: #0f172a; padding: 6px 16px; border-radius: 6px; letter-spacing: 0.15em; }
+        .stat-row { display: flex; gap: 12px; margin-top: 16px; }
+        .stat-box { flex: 1; background: #1e293b; border: 1px solid #334155; border-radius: 10px; padding: 14px; text-align: center; }
+        .stat-box .stat-val { font-family: 'JetBrains Mono', monospace; font-size: 24px; font-weight: 700; }
+        .stat-box .stat-label { font-size: 11px; color: #64748b; margin-top: 4px; }
+    </style>
+</head>
+<body>
+
+<!-- ═══════════════ HEADER ═══════════════ -->
+<header class="header">
+    <div class="header-left">
+        <span class="material-symbols-outlined logo-icon" style="font-variation-settings: 'FILL' 1;">public</span>
+        <h1>Urban Intelligence</h1>
+    </div>
+    <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('command')">Command Center</button>
+        <button class="tab-btn" onclick="switchTab('incidents')">Incidents</button>
+        <button class="tab-btn" onclick="switchTab('reports')">Reports</button>
+    </div>
+    <div style="width: 200px;"></div><!-- spacer for centering -->
+</header>
+
+<!-- ═══════════════ MAIN ═══════════════ -->
+<div class="main">
+
+    <!-- ──── TAB 1: COMMAND CENTER ──── -->
+    <div id="tab-command" class="tab-panel active">
+
+        <!-- KPI Cards -->
+        <div class="kpi-row">
+            <div class="kpi-card">
+                <div class="accent" style="background:#475569;"></div>
+                <div class="kpi-label">Raw Events</div>
+                <div class="kpi-value" id="kpi-raw">—</div>
+                <div class="kpi-sub">from fleet sensors</div>
+            </div>
+            <div class="kpi-card">
+                <div class="accent" style="background:#0d9488;"></div>
+                <div class="kpi-label">Verified Clusters</div>
+                <div class="kpi-value" id="kpi-confirmed">—</div>
+                <div class="kpi-sub">after deduplication</div>
+            </div>
+            <div class="kpi-card">
+                <div class="accent" style="background:#10b981;"></div>
+                <div class="kpi-label">Active Buses</div>
+                <div class="kpi-value" id="kpi-buses">—</div>
+                <div class="kpi-sub">transmitting data</div>
+            </div>
+            <div class="kpi-card critical">
+                <div class="accent" style="background:#ef4444;"></div>
+                <div class="kpi-label">Critical Alerts</div>
+                <div class="kpi-value" id="kpi-critical">—</div>
+                <div class="kpi-sub">requires attention</div>
+            </div>
+        </div>
+
+        <!-- Pipeline Progress -->
+        <div class="pipeline">
+            <div class="pipeline-label">Data Pipeline</div>
+            <div class="pipeline-bar">
+                <div class="pipe-seg pipe-raw" id="pipe-raw" style="width:100%;">RAW</div>
+                <div class="pipe-seg pipe-verified" id="pipe-verified" style="width:0%;">VERIFIED</div>
+                <div class="pipe-seg pipe-ranked" id="pipe-ranked" style="width:0%;">RANKED</div>
+            </div>
+        </div>
+
+        <!-- Map + Alerts -->
+        <div class="content-row">
+            <div class="map-container">
+                <!-- Filter Chips -->
+                <div class="filter-bar">
+                    <div class="filter-chip" style="background:#a855f7;" data-filter="pothole" onclick="toggleFilter(this)">Potholes</div>
+                    <div class="filter-chip" style="background:#ef4444;" data-filter="incident" onclick="toggleFilter(this)">Incidents</div>
+                    <div class="filter-chip" style="background:#14b8a6;" data-filter="vehicle" onclick="toggleFilter(this)">Vehicles</div>
+                    <div class="filter-chip" style="background:#facc15; color:#0f172a;" data-filter="pedestrian" onclick="toggleFilter(this)">Pedestrians</div>
+                </div>
+                <div id="map"></div>
+            </div>
+
+            <!-- Live Alerts Sidebar -->
+            <div class="alerts-panel">
+                <div class="alerts-header">
+                    <h2>Live Alerts</h2>
+                    <span class="live-badge">LIVE</span>
+                </div>
+                <div class="alerts-list" id="alerts-list">
+                    <div style="color:#64748b; text-align:center; padding:20px; font-size:13px;">Loading...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ──── TAB 2: INCIDENTS ──── -->
+    <div id="tab-incidents" class="tab-panel">
+        <div style="margin-bottom:8px;">
+            <h2 style="font-size:20px; font-weight:700;">All Detected Incidents</h2>
+            <p style="color:#94a3b8; font-size:13px;">Every raw anomaly captured across the urban fleet sensor network.</p>
+        </div>
+        <div class="incidents-grid" id="incidents-grid"></div>
+    </div>
+
+    <!-- ──── TAB 3: REPORTS ──── -->
+    <div id="tab-reports" class="tab-panel">
+        <div class="reports-content">
+            <!-- Bandwidth Report -->
+            <div class="report-section">
+                <h2>Minimized Bandwidth Architecture</h2>
+                <p>Instead of streaming raw video (25 MB/min per bus), the edge node runs on-device AI inference and transmits only a structured JSON payload and a single cropped evidence frame when a severe event is detected.</p>
+
+                <div class="bandwidth-demo">
+                    <div class="bw-card">
+                        <h3 style="color:#ef4444;">Traditional Approach</h3>
+                        <div class="big-num" style="color:#ef4444;">25 MB</div>
+                        <div class="kpi-sub">per minute per bus × 88 buses</div>
+                        <div style="margin-top:12px; font-size:13px; color:#94a3b8;">= 2.2 GB/min continuous upload</div>
+                    </div>
+                    <div style="display:flex; align-items:center; font-size:28px; color:#475569;">→</div>
+                    <div class="bw-card" style="border-color: #10b981;">
+                        <h3 style="color:#10b981;">Our Edge Solution</h3>
+                        <div class="big-num" style="color:#10b981;">1.4 KB</div>
+                        <div class="kpi-sub">per event (JSON telemetry)</div>
+                        <div style="margin-top:12px; font-size:13px; color:#10b981; font-weight:600;">99.9% bandwidth saved</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example Report Card -->
+            <div class="report-section" style="border-color:#ef444440;">
+                <h2>Sample: Rash Driving / Hit & Run Report</h2>
+                <p>This is exactly what gets transmitted to the central server when the AI detects a critical incident on-bus.</p>
+                <div style="display:flex; gap:20px;">
+                    <div class="plate-mock">
+                        <span class="material-symbols-outlined" style="font-size:40px; color:#64748b;">directions_car</span>
+                        <div class="plate-text" id="report-plate">TN-38-XY-1234</div>
+                        <div style="font-size:11px; color:#64748b;">ANPR Capture</div>
+                    </div>
+                    <div style="flex:1; font-family:'JetBrains Mono', monospace; font-size:13px; color:#94a3b8; line-height:2; background:#0f172a; padding:16px; border-radius:10px; border:1px solid #334155;">
+                        <div><strong style="color:#64748b;">TIMESTAMP:</strong> <span id="report-time">—</span></div>
+                        <div><strong style="color:#64748b;">LOCATION:</strong> <span id="report-loc">—</span></div>
+                        <div><strong style="color:#64748b;">SEVERITY:</strong> <span id="report-severity" style="color:#ef4444;">—</span></div>
+                        <div><strong style="color:#64748b;">BUS_NODE:</strong> <span id="report-bus">—</span></div>
+                        <div><strong style="color:#64748b;">PAYLOAD:</strong> <span style="color:#10b981;">1.4 KB JSON + 12 KB crop</span></div>
+                        <div style="margin-top:8px; color:#10b981; font-weight:600;">✓ Edge inference complete</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Clustering Report -->
+            <div class="report-section">
+                <h2>Spatial-Temporal Clustering Engine</h2>
+                <p>When multiple buses traverse the same route and detect the same pothole, the central server clusters them into a single verified report, preventing authority dashboards from being spammed with duplicates.</p>
+                <div class="stat-row" id="cluster-stats">
+                    <div class="stat-box">
+                        <div class="stat-val" id="stat-raw" style="color:#94a3b8;">—</div>
+                        <div class="stat-label">Total Raw Reports</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-val" style="color:#ef4444;" id="stat-deduped">—</div>
+                        <div class="stat-label">Duplicates Eliminated</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-val" style="color:#10b981;" id="stat-verified">—</div>
+                        <div class="stat-label">Verified Unique Events</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-val" style="color:#0d9488;" id="stat-reduction">—</div>
+                        <div class="stat-label">Reduction %</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div><!-- /main -->
+
+<script>
+// ═══════════════════════════════════════
+// TAB SWITCHING
+// ═══════════════════════════════════════
+function switchTab(id) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+
+    document.getElementById('tab-' + id).classList.add('active');
+    // Find the matching button
+    document.querySelectorAll('.tab-btn').forEach(b => {
+        if (b.textContent.trim().toLowerCase().includes(id === 'command' ? 'command' : id)) {
+            b.classList.add('active');
+        }
+    });
+
+    if (id === 'command') {
+        setTimeout(() => map.invalidateSize(), 100);
+    }
+}
+
+// ═══════════════════════════════════════
+// LEAFLET MAP (100% free, no API key)
+// ═══════════════════════════════════════
+const map = L.map('map', { zoomControl: false }).setView([11.0168, 76.9558], 14);
+
+// Stadia AlidadeSmoothDark — free, no key, dark theme
+L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
+    maxZoom: 19,
+    attribution: '© Stadia Maps © OpenMapTiles © OpenStreetMap'
+}).addTo(map);
+
+L.control.zoom({ position: 'bottomright' }).addTo(map);
+
+const markers = L.markerClusterGroup({
+    spiderfyOnMaxZoom: true,
+    showCoverageOnHover: false,
+    maxClusterRadius: 50,
+    iconCreateFunction: function(cluster) {
+        const count = cluster.getChildCount();
+        return L.divIcon({
+            html: '<div style="background:#10b981; color:#fff; width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:13px; font-family:JetBrains Mono; border:2px solid #fff; box-shadow:0 2px 8px rgba(0,0,0,0.4);">' + count + '</div>',
+            className: '',
+            iconSize: [36, 36]
+        });
+    }
+});
+map.addLayer(markers);
+
+const TYPE_COLORS = {
+    'pothole': '#a855f7',
+    'incident_hitandrun': '#ef4444',
+    'pedestrian_crossing': '#facc15',
+    'vehicle_count': '#14b8a6',
+    'missing_infra': '#64748b'
+};
+
+function createCircleIcon(color) {
+    return L.divIcon({
+        html: '<div style="width:14px;height:14px;border-radius:50%;background:' + color + ';border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,0.5);"></div>',
+        className: '',
+        iconSize: [14, 14],
+        iconAnchor: [7, 7]
+    });
+}
+
+// ═══════════════════════════════════════
+// FILTERS
+// ═══════════════════════════════════════
+const activeFilters = { pothole: true, incident: true, vehicle: true, pedestrian: true };
+
+function toggleFilter(el) {
+    const key = el.dataset.filter;
+    activeFilters[key] = !activeFilters[key];
+    el.classList.toggle('off');
+    renderMap(window._lastRawData || []);
+}
+
+function isVisible(evtType) {
+    if (evtType.includes('pothole')) return activeFilters.pothole;
+    if (evtType.includes('incident')) return activeFilters.incident;
+    if (evtType.includes('pedestrian')) return activeFilters.pedestrian;
+    if (evtType.includes('vehicle')) return activeFilters.vehicle;
+    return true;
+}
+
+// ═══════════════════════════════════════
+// RENDER FUNCTIONS
+// ═══════════════════════════════════════
+function renderMap(raw) {
+    markers.clearLayers();
+    raw.forEach(e => {
+        if (!isVisible(e.event_type)) return;
+        const lat = e.gps && e.gps.lat;
+        const lng = e.gps && e.gps.lng;
+        if (!lat || !lng) return;
+
+        const color = TYPE_COLORS[e.event_type] || '#14b8a6';
+        const icon = createCircleIcon(color);
+        const popup = '<div style="font-family:Inter,sans-serif;font-size:12px;min-width:180px;line-height:1.8;">' +
+            '<b style="font-size:13px;text-transform:uppercase;color:' + color + ';">' + e.event_type.replace(/_/g, ' ') + '</b><br/>' +
+            '<b>Confidence:</b> ' + (e.confidence * 100).toFixed(0) + '%<br/>' +
+            '<b>Bus:</b> ' + (e.bus_id || 'N/A') + '<br/>' +
+            '<b>Time:</b> ' + new Date(e.timestamp).toLocaleTimeString() +
+            (e.data && e.data.plate_number ? '<br/><b>Plate:</b> <span style="color:#facc15;font-weight:700;">' + e.data.plate_number + '</span>' : '') +
+            '</div>';
+        L.marker([lat, lng], { icon: icon }).bindPopup(popup).addTo(markers);
+    });
+}
+
+function renderAlerts(ranked) {
+    const list = document.getElementById('alerts-list');
+    list.innerHTML = '';
+    if (!ranked.length) {
+        list.innerHTML = '<div style="color:#64748b; text-align:center; padding:20px; font-size:13px;">No ranked alerts yet.</div>';
+        return;
+    }
+    ranked.forEach(a => {
+        const color = TYPE_COLORS[a.event_type] || '#64748b';
+        let desc = 'Verified by ' + (a.confirmation_count || 1) + ' bus(es). Confidence: ' + (a.confidence * 100).toFixed(0) + '%';
+        if (a.data && a.data.plate_number) {
+            desc += '<div class="alert-plate">' + a.data.plate_number + '</div>';
+        }
+        const html = '<div class="alert-card">' +
+            '<div class="left-bar" style="background:' + color + ';"></div>' +
+            '<div style="display:flex;justify-content:space-between;align-items:center;padding-left:10px;">' +
+                '<span class="alert-type" style="color:' + color + ';">' + a.event_type.replace(/_/g, ' ') + '</span>' +
+                '<span class="alert-score">Score: ' + a.severity_score.toFixed(2) + '</span>' +
+            '</div>' +
+            '<div class="alert-desc" style="padding-left:10px;">' + desc + '</div>' +
+        '</div>';
+        list.insertAdjacentHTML('beforeend', html);
+    });
+}
+
+function renderIncidents(raw) {
+    const grid = document.getElementById('incidents-grid');
+    grid.innerHTML = '';
+    if (!raw.length) {
+        grid.innerHTML = '<div style="color:#64748b; grid-column:1/-1; text-align:center; padding:40px;">No incidents detected yet. Run the detection pipeline.</div>';
+        return;
+    }
+    raw.forEach(e => {
+        const color = TYPE_COLORS[e.event_type] || '#64748b';
+        let meta = '<div><strong>Confidence:</strong> ' + (e.confidence * 100).toFixed(1) + '%</div>' +
+                   '<div><strong>Bus:</strong> ' + (e.bus_id || 'N/A') + '</div>' +
+                   '<div><strong>Time:</strong> ' + new Date(e.timestamp).toLocaleTimeString() + '</div>' +
+                   '<div><strong>Location:</strong> ' + (e.gps ? e.gps.lat.toFixed(4) + ', ' + e.gps.lng.toFixed(4) : 'N/A') + '</div>';
+        if (e.data && e.data.plate_number) {
+            meta += '<div style="margin-top:6px;"><span class="alert-plate">' + e.data.plate_number + '</span></div>';
+        }
+        if (e.data && e.data.description) {
+            meta += '<div style="margin-top:4px; color:#64748b;">' + e.data.description + '</div>';
+        }
+        const html = '<div class="incident-card">' +
+            '<span class="type-badge" style="background:' + color + ';">' + e.event_type.replace(/_/g, ' ') + '</span>' +
+            '<div class="incident-meta">' + meta + '</div>' +
+        '</div>';
+        grid.insertAdjacentHTML('beforeend', html);
+    });
+}
+
+// ═══════════════════════════════════════
+// MAIN DATA LOADER
+// ═══════════════════════════════════════
+async function loadDashboard() {
+    try {
+        const [statsRes, rawRes, rankedRes] = await Promise.all([
+            fetch('/api/stats'), fetch('/api/raw'), fetch('/api/ranked')
+        ]);
+        const stats = await statsRes.json();
+        const raw = await rawRes.json();
+        const ranked = await rankedRes.json();
+
+        window._lastRawData = raw;
+
+        // KPIs
+        document.getElementById('kpi-raw').textContent = stats.raw_count;
+        document.getElementById('kpi-confirmed').textContent = stats.confirmed_count;
+        document.getElementById('kpi-critical').textContent = stats.critical_count;
+        document.getElementById('kpi-buses').textContent = stats.bus_count || 1;
+
+        // Pipeline bar (show clustering reduction)
+        const rawN = stats.raw_count || 1;
+        const confN = stats.confirmed_count;
+        const rankN = stats.ranked_count;
+        const rawPct = Math.max(100 - Math.round((confN / rawN) * 100) - Math.round((rankN / rawN) * 100), 10);
+        const confPct = Math.round((confN / rawN) * 100);
+        const rankPct = Math.round((rankN / rawN) * 100);
+        document.getElementById('pipe-raw').style.width = rawPct + '%';
+        document.getElementById('pipe-raw').textContent = 'RAW ' + rawN;
+        document.getElementById('pipe-verified').style.width = confPct + '%';
+        document.getElementById('pipe-verified').textContent = 'VERIFIED ' + confN;
+        document.getElementById('pipe-ranked').style.width = rankPct + '%';
+        document.getElementById('pipe-ranked').textContent = 'RANKED ' + rankN;
+
+        // Map
+        renderMap(raw);
+
+        // Alerts
+        renderAlerts(ranked);
+
+        // Incidents Tab
+        renderIncidents(raw);
+
+        // Reports Tab — populate with real data
+        if (ranked.length > 0) {
+            const topIncident = ranked.find(r => r.data && r.data.plate_number) || ranked[0];
+            if (topIncident.data && topIncident.data.plate_number) {
+                document.getElementById('report-plate').textContent = topIncident.data.plate_number;
+            }
+            document.getElementById('report-time').textContent = new Date(topIncident.timestamp).toLocaleString();
+            document.getElementById('report-loc').textContent = topIncident.gps ? topIncident.gps.lat.toFixed(4) + '° N, ' + topIncident.gps.lng.toFixed(4) + '° E' : 'N/A';
+            document.getElementById('report-severity').textContent = topIncident.severity_score.toFixed(2) + ' (CRITICAL)';
+            document.getElementById('report-bus').textContent = topIncident.bus_id || 'BUS-04';
+        }
+
+        // Cluster stats
+        document.getElementById('stat-raw').textContent = rawN;
+        document.getElementById('stat-verified').textContent = confN;
+        document.getElementById('stat-deduped').textContent = rawN - confN;
+        document.getElementById('stat-reduction').textContent = rawN > 0 ? Math.round(((rawN - confN) / rawN) * 100) + '%' : '0%';
+
+    } catch (err) {
+        console.error('Dashboard load error:', err);
+    }
+}
+
+// Initial load + auto-refresh
+loadDashboard();
+setInterval(loadDashboard, 5000);
+</script>
+</body>
+</html>

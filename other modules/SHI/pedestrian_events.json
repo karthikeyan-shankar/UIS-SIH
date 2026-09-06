@@ -1,0 +1,842 @@
+[
+    {
+        "event_id": "evt_cross_10",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:41:32.262937Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_20",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:41:33.051683Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 2,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_30",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:41:34.271296Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_50",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:41:37.350480Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_70",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:41:41.001555Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_100",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:41:46.304305Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_110",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:41:47.414543Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_120",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:41:49.280131Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_130",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:41:50.566368Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_180",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:41:56.943928Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_190",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:41:58.216377Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_200",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:41:59.882421Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_210",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:42:01.937202Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_220",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:42:03.187340Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_260",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:42:09.248756Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_270",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:42:11.671459Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_280",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:42:13.331041Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_290",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:42:16.679007Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_340",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:42:35.459797Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_360",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:42:43.697930Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_400",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:42:53.581410Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_480",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:43:06.875344Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_510",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:43:12.385623Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_520",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:43:15.252915Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_530",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:43:17.976432Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_540",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:43:20.670361Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_580",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:43:28.962827Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_590",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:43:30.976493Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_600",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:43:33.262403Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_610",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:43:35.778440Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_620",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:43:38.321267Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 2,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_630",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:43:41.930614Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_690",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:43:52.226451Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_700",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:43:54.035803Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_710",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:43:56.665543Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 2,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_720",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:43:59.114091Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 2,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_730",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:44:02.209400Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_740",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:44:03.483604Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_750",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:44:04.752005Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_810",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:44:16.030799Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_820",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:44:17.691453Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_830",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:44:21.932984Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_840",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:44:26.589141Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_850",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:44:28.219999Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 2,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_890",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:44:33.315562Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 3,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_900",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:44:34.931421Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 2,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_910",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:44:36.368030Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 2,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_1040",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:45:03.305299Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_1050",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:45:04.833322Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 2,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_1060",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:45:07.524215Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 2,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_1070",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:45:09.071729Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_1120",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:45:17.426447Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_1130",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:45:18.724389Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_1150",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:45:22.231926Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_1160",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:45:23.931055Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    },
+    {
+        "event_id": "evt_cross_1180",
+        "event_type": "pedestrian_crossing",
+        "timestamp": "2026-08-28T15:45:27.417890Z",
+        "gps": {
+            "lat": 11.0168,
+            "lng": 76.9558
+        },
+        "bus_id": "bus_04",
+        "data": {
+            "people_count": 1,
+            "risk_level": "high"
+        },
+        "confidence": 0.9
+    }
+]

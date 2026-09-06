@@ -1,0 +1,29 @@
+# Virtual Environments
+venv/
+env/
+ENV/
+*.venv
+
+# Python Bytecode & Cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Large Model Weights (Downloaded automatically on first run)
+*.pt
+*.engine
+*.onnx
+
+# Temporary data / output caches
+raw/
+confirmed/
+ranked/
+outbox/
+*.log
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
