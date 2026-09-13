@@ -43,5 +43,6 @@ The Urban Intelligence System is a smart, mobile edge-computing platform designe
    ```
    *This script runs the spatial clustering and verification pipeline on raw data.*
 
-## License
-Proprietary - Developed for Smart India Hackathon (SIH) 2026.
+
+
+still fine tuning the modules well
