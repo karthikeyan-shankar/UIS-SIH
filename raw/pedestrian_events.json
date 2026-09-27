@@ -1,0 +1,100 @@
+[
+  {
+    "event_id": "evt_9d29ce92",
+    "event_type": "pedestrian_crossing",
+    "timestamp": "2026-09-27T05:36:40.178403Z",
+    "gps": {
+      "lat": 11.017521,
+      "lng": 76.954514
+    },
+    "bus_id": "BUS-7G-05",
+    "data": {
+      "description": "Pedestrian crossing at Gandhipuram signal"
+    },
+    "confidence": 0.83
+  },
+  {
+    "event_id": "evt_f2d3af6f",
+    "event_type": "pedestrian_crossing",
+    "timestamp": "2026-09-27T05:58:40.178403Z",
+    "gps": {
+      "lat": 11.017479,
+      "lng": 76.954496
+    },
+    "bus_id": "BUS-7G-01",
+    "data": {
+      "description": "Pedestrian crossing at Gandhipuram signal"
+    },
+    "confidence": 0.84
+  },
+  {
+    "event_id": "evt_0ce0dc12",
+    "event_type": "pedestrian_crossing",
+    "timestamp": "2026-09-27T05:33:40.178403Z",
+    "gps": {
+      "lat": 11.01752,
+      "lng": 76.954487
+    },
+    "bus_id": "BUS-7G-03",
+    "data": {
+      "description": "Pedestrian crossing at Gandhipuram signal"
+    },
+    "confidence": 0.76
+  },
+  {
+    "event_id": "evt_7900e3f4",
+    "event_type": "pedestrian_crossing",
+    "timestamp": "2026-09-27T06:00:40.178403Z",
+    "gps": {
+      "lat": 11.019018,
+      "lng": 76.9565
+    },
+    "bus_id": "BUS-7G-05",
+    "data": {
+      "description": "School zone crossing on Cross Cut Road"
+    },
+    "confidence": 0.87
+  },
+  {
+    "event_id": "evt_7e19619c",
+    "event_type": "pedestrian_crossing",
+    "timestamp": "2026-09-27T05:56:40.178403Z",
+    "gps": {
+      "lat": 11.019014,
+      "lng": 76.956502
+    },
+    "bus_id": "BUS-7G-01",
+    "data": {
+      "description": "School zone crossing on Cross Cut Road"
+    },
+    "confidence": 0.7
+  },
+  {
+    "event_id": "evt_ce2192f3",
+    "event_type": "pedestrian_crossing",
+    "timestamp": "2026-09-27T06:12:40.178403Z",
+    "gps": {
+      "lat": 11.015523,
+      "lng": 76.95202
+    },
+    "bus_id": "BUS-7G-05",
+    "data": {
+      "description": "Unmarked crossing near Townhall"
+    },
+    "confidence": 0.77
+  },
+  {
+    "event_id": "evt_5e2933e7",
+    "event_type": "pedestrian_crossing",
+    "timestamp": "2026-09-27T06:00:40.178403Z",
+    "gps": {
+      "lat": 11.015486,
+      "lng": 76.951986
+    },
+    "bus_id": "BUS-7G-03",
+    "data": {
+      "description": "Unmarked crossing near Townhall"
+    },
+    "confidence": 0.86
+  }
+]

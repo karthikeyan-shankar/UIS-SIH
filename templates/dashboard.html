@@ -124,9 +124,8 @@
         </div>
     </div>
     <div class="tabs">
-        <button class="tab-btn active" onclick="switchTab('command')">Command Center</button>
-        <button class="tab-btn" onclick="switchTab('incidents')">Incidents</button>
-        <button class="tab-btn" onclick="switchTab('reports')">Reports</button>
+        <button class="tab-btn active" id="btn-command" onclick="switchTab('command')">Command Center</button>
+        <button class="tab-btn" id="btn-incidents" onclick="switchTab('incidents')">Ranked Fix List</button>
     </div>
     <div style="width: 200px;"></div><!-- spacer for centering -->
 </header>
@@ -204,87 +203,13 @@
     <!-- ──── TAB 2: INCIDENTS ──── -->
     <div id="tab-incidents" class="tab-panel">
         <div style="margin-bottom:8px;">
-            <h2 style="font-size:20px; font-weight:700;">All Detected Incidents</h2>
-            <p style="color:#94a3b8; font-size:13px;">Every raw anomaly captured across the urban fleet sensor network.</p>
+            <h2 style="font-size:20px; font-weight:700;">Ranked Fix List</h2>
+            <p style="color:#94a3b8; font-size:13px;">Prioritized sequence of verified anomalies for immediate city maintenance.</p>
         </div>
         <div class="incidents-grid" id="incidents-grid"></div>
     </div>
 
-    <!-- ──── TAB 3: REPORTS ──── -->
-    <div id="tab-reports" class="tab-panel">
-        <div class="reports-content">
-            <!-- Bandwidth Report -->
-            <div class="report-section">
-                <h2>Minimized Bandwidth Architecture</h2>
-                <p>Instead of streaming raw video (25 MB/min per bus), the edge node runs on-device AI inference and transmits only a structured JSON payload and a single cropped evidence frame when a severe event is detected.</p>
-
-                <div class="bandwidth-demo">
-                    <div class="bw-card">
-                        <h3 style="color:#ef4444;">Traditional Approach</h3>
-                        <div class="big-num" style="color:#ef4444;">25 MB</div>
-                        <div class="kpi-sub">per minute per bus × 88 buses</div>
-                        <div style="margin-top:12px; font-size:13px; color:#94a3b8;">= 2.2 GB/min continuous upload</div>
-                    </div>
-                    <div style="display:flex; align-items:center; font-size:28px; color:#475569;">→</div>
-                    <div class="bw-card" style="border-color: #10b981;">
-                        <h3 style="color:#10b981;">Our Edge Solution</h3>
-                        <div class="big-num" style="color:#10b981;">1.4 KB</div>
-                        <div class="kpi-sub">per event (JSON telemetry)</div>
-                        <div style="margin-top:12px; font-size:13px; color:#10b981; font-weight:600;">99.9% bandwidth saved</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Example Report Card -->
-            <div class="report-section" style="border-color:#ef444440;">
-                <h2>Sample: Rash Driving / Hit & Run Report</h2>
-                <p>This is exactly what gets transmitted to the central server when the AI detects a critical incident on-bus.</p>
-                <div style="display:flex; gap:20px;">
-                    <div class="plate-mock">
-                        <span class="material-symbols-outlined" style="font-size:40px; color:#64748b;">directions_car</span>
-                        <div class="plate-text" id="report-plate">TN-38-XY-1234</div>
-                        <div style="font-size:11px; color:#64748b;">ANPR Capture</div>
-                    </div>
-                    <div style="flex:1; font-family:'JetBrains Mono', monospace; font-size:13px; color:#94a3b8; line-height:2; background:#0f172a; padding:16px; border-radius:10px; border:1px solid #334155;">
-                        <div><strong style="color:#64748b;">TIMESTAMP:</strong> <span id="report-time">—</span></div>
-                        <div><strong style="color:#64748b;">LOCATION:</strong> <span id="report-loc">—</span></div>
-                        <div><strong style="color:#64748b;">SEVERITY:</strong> <span id="report-severity" style="color:#ef4444;">—</span></div>
-                        <div><strong style="color:#64748b;">BUS_NODE:</strong> <span id="report-bus">—</span></div>
-                        <div><strong style="color:#64748b;">PAYLOAD:</strong> <span style="color:#10b981;">1.4 KB JSON + 12 KB crop</span></div>
-                        <div style="margin-top:8px; color:#10b981; font-weight:600;">✓ Edge inference complete</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Clustering Report -->
-            <div class="report-section">
-                <h2>Spatial-Temporal Clustering Engine</h2>
-                <p>When multiple buses traverse the same route and detect the same pothole, the central server clusters them into a single verified report, preventing authority dashboards from being spammed with duplicates.</p>
-                <div class="stat-row" id="cluster-stats">
-                    <div class="stat-box">
-                        <div class="stat-val" id="stat-raw" style="color:#94a3b8;">—</div>
-                        <div class="stat-label">Total Raw Reports</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-val" style="color:#ef4444;" id="stat-deduped">—</div>
-                        <div class="stat-label">Duplicates Eliminated</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-val" style="color:#10b981;" id="stat-verified">—</div>
-                        <div class="stat-label">Verified Unique Events</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-val" style="color:#0d9488;" id="stat-reduction">—</div>
-                        <div class="stat-label">Reduction %</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</div><!-- /main -->
-
-<script>
+    <script>
 // ═══════════════════════════════════════
 // TAB SWITCHING
 // ═══════════════════════════════════════
@@ -293,12 +218,7 @@ function switchTab(id) {
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
 
     document.getElementById('tab-' + id).classList.add('active');
-    // Find the matching button
-    document.querySelectorAll('.tab-btn').forEach(b => {
-        if (b.textContent.trim().toLowerCase().includes(id === 'command' ? 'command' : id)) {
-            b.classList.add('active');
-        }
-    });
+    document.getElementById('btn-' + id).classList.add('active');
 
     if (id === 'command') {
         setTimeout(() => map.invalidateSize(), 100);
@@ -419,29 +339,33 @@ function renderAlerts(ranked) {
     });
 }
 
-function renderIncidents(raw) {
+function renderIncidents(ranked) {
     const grid = document.getElementById('incidents-grid');
     grid.innerHTML = '';
-    if (!raw.length) {
-        grid.innerHTML = '<div style="color:#64748b; grid-column:1/-1; text-align:center; padding:40px;">No incidents detected yet. Run the detection pipeline.</div>';
+    if (!ranked.length) {
+        grid.innerHTML = '<div style="color:#64748b; grid-column:1/-1; text-align:center; padding:40px;">No verified issues found. Run the detection pipeline.</div>';
         return;
     }
-    raw.forEach(e => {
-        const color = TYPE_COLORS[e.event_type] || '#64748b';
-        let meta = '<div><strong>Confidence:</strong> ' + (e.confidence * 100).toFixed(1) + '%</div>' +
-                   '<div><strong>Bus:</strong> ' + (e.bus_id || 'N/A') + '</div>' +
-                   '<div><strong>Time:</strong> ' + new Date(e.timestamp).toLocaleTimeString() + '</div>' +
-                   '<div><strong>Location:</strong> ' + (e.gps ? e.gps.lat.toFixed(4) + ', ' + e.gps.lng.toFixed(4) : 'N/A') + '</div>';
-        if (e.data && e.data.plate_number) {
-            meta += '<div style="margin-top:6px;"><span class="alert-plate">' + e.data.plate_number + '</span></div>';
-        }
-        if (e.data && e.data.description) {
-            meta += '<div style="margin-top:4px; color:#64748b;">' + e.data.description + '</div>';
-        }
-        const html = '<div class="incident-card">' +
-            '<span class="type-badge" style="background:' + color + ';">' + e.event_type.replace(/_/g, ' ') + '</span>' +
-            '<div class="incident-meta">' + meta + '</div>' +
-        '</div>';
+    
+    ranked.sort((a, b) => b.severity_score - a.severity_score);
+
+    ranked.forEach((e, index) => {
+        const color = e.severity_score > 0.7 ? '#ef4444' : (e.severity_score > 0.4 ? '#f59e0b' : '#10b981');
+        const rankNum = index + 1;
+        
+        let meta = '<div style="display:flex; justify-content:space-between; align-items:center;">' +
+                   '  <div style="font-size: 18px; font-weight: bold; color: ' + color + ';">Priority Rank: #' + rankNum + '</div>' +
+                   '  <div style="font-size: 14px; background: #000; padding: 4px 8px; border: 1px solid #333; color: #00e5ff;">Severity Score: ' + (e.severity_score * 100).toFixed(1) + '/100</div>' +
+                   '</div>' +
+                   '<div style="margin-top: 10px; font-size: 14px; color: #cbd5e1; line-height: 1.6;">' +
+                   '  <strong style="color:white;">Issue Type:</strong> ' + e.event_type.replace(/_/g, ' ').toUpperCase() + '<br/>' +
+                   '  <strong style="color:white;">GPS Coordinates:</strong> ' + (e.gps ? e.gps.lat.toFixed(5) + ', ' + e.gps.lng.toFixed(5) : 'N/A') + '<br/>' +
+                   '  <strong style="color:#00ff00;">Verification:</strong> Clustered & Confirmed via Spatial-Temporal Algorithm' +
+                   '</div>';
+
+        const html = '<div style="background: #111; border-left: 5px solid ' + color + '; border-radius: 4px; padding: 15px; margin-bottom: 10px;">' +
+                     meta +
+                     '</div>';
         grid.insertAdjacentHTML('beforeend', html);
     });
 }
@@ -487,19 +411,7 @@ async function loadDashboard() {
         renderAlerts(ranked);
 
         // Incidents Tab
-        renderIncidents(raw);
-
-        // Reports Tab — populate with real data
-        if (ranked.length > 0) {
-            const topIncident = ranked.find(r => r.data && r.data.plate_number) || ranked[0];
-            if (topIncident.data && topIncident.data.plate_number) {
-                document.getElementById('report-plate').textContent = topIncident.data.plate_number;
-            }
-            document.getElementById('report-time').textContent = new Date(topIncident.timestamp).toLocaleString();
-            document.getElementById('report-loc').textContent = topIncident.gps ? topIncident.gps.lat.toFixed(4) + '° N, ' + topIncident.gps.lng.toFixed(4) + '° E' : 'N/A';
-            document.getElementById('report-severity').textContent = topIncident.severity_score.toFixed(2) + ' (CRITICAL)';
-            document.getElementById('report-bus').textContent = topIncident.bus_id || 'BUS-04';
-        }
+        renderIncidents(ranked);
 
         // Cluster stats
         document.getElementById('stat-raw').textContent = rawN;

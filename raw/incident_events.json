@@ -1,0 +1,32 @@
+[
+  {
+    "event_id": "evt_bde8ffcd",
+    "event_type": "incident_hitandrun",
+    "timestamp": "2026-09-27T05:23:40.178403Z",
+    "gps": {
+      "lat": 11.018804,
+      "lng": 76.954804
+    },
+    "bus_id": "BUS-7G-04",
+    "data": {
+      "plate_number": "TN38XY1234",
+      "incident_type": "Hit and Run Offender"
+    },
+    "confidence": 0.59
+  },
+  {
+    "event_id": "evt_5488c3d5",
+    "event_type": "incident_hitandrun",
+    "timestamp": "2026-09-27T05:37:40.178403Z",
+    "gps": {
+      "lat": 11.016005,
+      "lng": 76.957501
+    },
+    "bus_id": "BUS-7G-05",
+    "data": {
+      "plate_number": "TN39AB5678",
+      "incident_type": "Rash Driving"
+    },
+    "confidence": 0.58
+  }
+]

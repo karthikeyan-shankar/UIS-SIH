@@ -1,0 +1,376 @@
+[
+  {
+    "event_id": "evt_396991f0",
+    "event_type": "pothole",
+    "timestamp": "2026-09-27T05:55:40.178403Z",
+    "gps": {
+      "lat": 11.0124868,
+      "lng": 76.95900900000001
+    },
+    "bus_id": "BUS-7G-03",
+    "data": {
+      "severity_hint": "medium",
+      "description": "Pothole near RS Puram bus stop"
+    },
+    "confidence": 0.82,
+    "status": "confirmed",
+    "confirmation_count": 5,
+    "confirming_buses": [
+      "BUS-7G-02",
+      "BUS-7G-03",
+      "BUS-7G-01",
+      "BUS-7G-04",
+      "BUS-7G-05"
+    ],
+    "severity_score": 0.746,
+    "scoring_breakdown": {
+      "size_factor": 0.6,
+      "recurrence_factor": 1,
+      "traffic_factor": 0.686
+    }
+  },
+  {
+    "event_id": "evt_4f977d76",
+    "event_type": "pothole",
+    "timestamp": "2026-09-27T05:47:40.178403Z",
+    "gps": {
+      "lat": 11.0168006,
+      "lng": 76.955798
+    },
+    "bus_id": "BUS-7G-03",
+    "data": {
+      "severity_hint": "large",
+      "description": "Deep pothole near Gandhipuram bus stand"
+    },
+    "confidence": 0.82,
+    "status": "confirmed",
+    "confirmation_count": 5,
+    "confirming_buses": [
+      "BUS-7G-03",
+      "BUS-7G-02",
+      "BUS-7G-01",
+      "BUS-7G-04",
+      "BUS-7G-05"
+    ],
+    "severity_score": 0.737,
+    "scoring_breakdown": {
+      "size_factor": 0.9,
+      "recurrence_factor": 1,
+      "traffic_factor": 0.257
+    }
+  },
+  {
+    "event_id": "evt_379c5e28",
+    "event_type": "pothole",
+    "timestamp": "2026-09-27T06:14:40.178403Z",
+    "gps": {
+      "lat": 11.014203,
+      "lng": 76.95350825
+    },
+    "bus_id": "BUS-7G-03",
+    "data": {
+      "severity_hint": "large",
+      "description": "Crater near Town Hall junction"
+    },
+    "confidence": 0.83,
+    "status": "confirmed",
+    "confirmation_count": 4,
+    "confirming_buses": [
+      "BUS-7G-03",
+      "BUS-7G-01",
+      "BUS-7G-02",
+      "BUS-7G-04"
+    ],
+    "severity_score": 0.729,
+    "scoring_breakdown": {
+      "size_factor": 0.9,
+      "recurrence_factor": 0.8,
+      "traffic_factor": 0.429
+    }
+  },
+  {
+    "event_id": "evt_bde8ffcd",
+    "event_type": "incident_hitandrun",
+    "timestamp": "2026-09-27T05:23:40.178403Z",
+    "gps": {
+      "lat": 11.018804,
+      "lng": 76.954804
+    },
+    "bus_id": "BUS-7G-04",
+    "data": {
+      "plate_number": "TN38XY1234",
+      "incident_type": "Hit and Run Offender"
+    },
+    "confidence": 0.59,
+    "status": "confirmed",
+    "confirmation_count": 1,
+    "confirming_buses": [
+      "BUS-7G-04"
+    ],
+    "severity_score": 0.711,
+    "scoring_breakdown": {
+      "size_factor": 1.0,
+      "recurrence_factor": 0.2,
+      "traffic_factor": 0.838
+    }
+  },
+  {
+    "event_id": "evt_acdf40ad",
+    "event_type": "pothole",
+    "timestamp": "2026-09-27T05:50:40.178403Z",
+    "gps": {
+      "lat": 11.018495,
+      "lng": 76.95719700000001
+    },
+    "bus_id": "BUS-7G-02",
+    "data": {
+      "severity_hint": "medium",
+      "description": "Road damage on Avinashi Road"
+    },
+    "confidence": 0.72,
+    "status": "confirmed",
+    "confirmation_count": 3,
+    "confirming_buses": [
+      "BUS-7G-03",
+      "BUS-7G-02",
+      "BUS-7G-04"
+    ],
+    "severity_score": 0.677,
+    "scoring_breakdown": {
+      "size_factor": 0.6,
+      "recurrence_factor": 0.6,
+      "traffic_factor": 0.857
+    }
+  },
+  {
+    "event_id": "evt_5488c3d5",
+    "event_type": "incident_hitandrun",
+    "timestamp": "2026-09-27T05:37:40.178403Z",
+    "gps": {
+      "lat": 11.016005,
+      "lng": 76.957501
+    },
+    "bus_id": "BUS-7G-05",
+    "data": {
+      "plate_number": "TN39AB5678",
+      "incident_type": "Rash Driving"
+    },
+    "confidence": 0.58,
+    "status": "confirmed",
+    "confirmation_count": 1,
+    "confirming_buses": [
+      "BUS-7G-05"
+    ],
+    "severity_score": 0.666,
+    "scoring_breakdown": {
+      "size_factor": 1.0,
+      "recurrence_factor": 0.2,
+      "traffic_factor": 0.686
+    }
+  },
+  {
+    "event_id": "evt_28d571b8",
+    "event_type": "pothole",
+    "timestamp": "2026-09-27T06:06:40.178403Z",
+    "gps": {
+      "lat": 11.0201044,
+      "lng": 76.95100199999999
+    },
+    "bus_id": "BUS-7G-05",
+    "data": {
+      "severity_hint": "small",
+      "description": "Surface crack on DB Road"
+    },
+    "confidence": 0.8,
+    "status": "confirmed",
+    "confirmation_count": 5,
+    "confirming_buses": [
+      "BUS-7G-02",
+      "BUS-7G-03",
+      "BUS-7G-01",
+      "BUS-7G-04",
+      "BUS-7G-05"
+    ],
+    "severity_score": 0.506,
+    "scoring_breakdown": {
+      "size_factor": 0.3,
+      "recurrence_factor": 1,
+      "traffic_factor": 0.286
+    }
+  },
+  {
+    "event_id": "evt_7900e3f4",
+    "event_type": "pedestrian_crossing",
+    "timestamp": "2026-09-27T06:00:40.178403Z",
+    "gps": {
+      "lat": 11.019018,
+      "lng": 76.9565
+    },
+    "bus_id": "BUS-7G-05",
+    "data": {
+      "description": "School zone crossing on Cross Cut Road"
+    },
+    "confidence": 0.87,
+    "status": "confirmed",
+    "confirmation_count": 1,
+    "confirming_buses": [
+      "BUS-7G-05"
+    ],
+    "severity_score": 0.477,
+    "scoring_breakdown": {
+      "size_factor": 0.4,
+      "recurrence_factor": 0.2,
+      "traffic_factor": 0.857
+    }
+  },
+  {
+    "event_id": "evt_7e19619c",
+    "event_type": "pedestrian_crossing",
+    "timestamp": "2026-09-27T05:56:40.178403Z",
+    "gps": {
+      "lat": 11.019014,
+      "lng": 76.956502
+    },
+    "bus_id": "BUS-7G-01",
+    "data": {
+      "description": "School zone crossing on Cross Cut Road"
+    },
+    "confidence": 0.7,
+    "status": "confirmed",
+    "confirmation_count": 1,
+    "confirming_buses": [
+      "BUS-7G-01"
+    ],
+    "severity_score": 0.477,
+    "scoring_breakdown": {
+      "size_factor": 0.4,
+      "recurrence_factor": 0.2,
+      "traffic_factor": 0.857
+    }
+  },
+  {
+    "event_id": "evt_9d29ce92",
+    "event_type": "pedestrian_crossing",
+    "timestamp": "2026-09-27T05:36:40.178403Z",
+    "gps": {
+      "lat": 11.017521,
+      "lng": 76.954514
+    },
+    "bus_id": "BUS-7G-05",
+    "data": {
+      "description": "Pedestrian crossing at Gandhipuram signal"
+    },
+    "confidence": 0.83,
+    "status": "confirmed",
+    "confirmation_count": 1,
+    "confirming_buses": [
+      "BUS-7G-05"
+    ],
+    "severity_score": 0.366,
+    "scoring_breakdown": {
+      "size_factor": 0.4,
+      "recurrence_factor": 0.2,
+      "traffic_factor": 0.486
+    }
+  },
+  {
+    "event_id": "evt_f2d3af6f",
+    "event_type": "pedestrian_crossing",
+    "timestamp": "2026-09-27T05:58:40.178403Z",
+    "gps": {
+      "lat": 11.017479,
+      "lng": 76.954496
+    },
+    "bus_id": "BUS-7G-01",
+    "data": {
+      "description": "Pedestrian crossing at Gandhipuram signal"
+    },
+    "confidence": 0.84,
+    "status": "confirmed",
+    "confirmation_count": 1,
+    "confirming_buses": [
+      "BUS-7G-01"
+    ],
+    "severity_score": 0.366,
+    "scoring_breakdown": {
+      "size_factor": 0.4,
+      "recurrence_factor": 0.2,
+      "traffic_factor": 0.486
+    }
+  },
+  {
+    "event_id": "evt_0ce0dc12",
+    "event_type": "pedestrian_crossing",
+    "timestamp": "2026-09-27T05:33:40.178403Z",
+    "gps": {
+      "lat": 11.01752,
+      "lng": 76.954487
+    },
+    "bus_id": "BUS-7G-03",
+    "data": {
+      "description": "Pedestrian crossing at Gandhipuram signal"
+    },
+    "confidence": 0.76,
+    "status": "confirmed",
+    "confirmation_count": 1,
+    "confirming_buses": [
+      "BUS-7G-03"
+    ],
+    "severity_score": 0.366,
+    "scoring_breakdown": {
+      "size_factor": 0.4,
+      "recurrence_factor": 0.2,
+      "traffic_factor": 0.486
+    }
+  },
+  {
+    "event_id": "evt_ce2192f3",
+    "event_type": "pedestrian_crossing",
+    "timestamp": "2026-09-27T06:12:40.178403Z",
+    "gps": {
+      "lat": 11.015523,
+      "lng": 76.95202
+    },
+    "bus_id": "BUS-7G-05",
+    "data": {
+      "description": "Unmarked crossing near Townhall"
+    },
+    "confidence": 0.77,
+    "status": "confirmed",
+    "confirmation_count": 1,
+    "confirming_buses": [
+      "BUS-7G-05"
+    ],
+    "severity_score": 0.349,
+    "scoring_breakdown": {
+      "size_factor": 0.4,
+      "recurrence_factor": 0.2,
+      "traffic_factor": 0.429
+    }
+  },
+  {
+    "event_id": "evt_5e2933e7",
+    "event_type": "pedestrian_crossing",
+    "timestamp": "2026-09-27T06:00:40.178403Z",
+    "gps": {
+      "lat": 11.015486,
+      "lng": 76.951986
+    },
+    "bus_id": "BUS-7G-03",
+    "data": {
+      "description": "Unmarked crossing near Townhall"
+    },
+    "confidence": 0.86,
+    "status": "confirmed",
+    "confirmation_count": 1,
+    "confirming_buses": [
+      "BUS-7G-03"
+    ],
+    "severity_score": 0.349,
+    "scoring_breakdown": {
+      "size_factor": 0.4,
+      "recurrence_factor": 0.2,
+      "traffic_factor": 0.429
+    }
+  }
+]

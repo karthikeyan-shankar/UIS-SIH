@@ -1,0 +1,700 @@
+[
+  {
+    "event_id": "evt_bde8ffcd",
+    "event_type": "incident_hitandrun",
+    "timestamp": "2026-09-27T05:23:40.178403Z",
+    "gps": {
+      "lat": 11.018804,
+      "lng": 76.954804
+    },
+    "bus_id": "BUS-7G-04",
+    "data": {
+      "plate_number": "TN38XY1234",
+      "incident_type": "Hit and Run Offender"
+    },
+    "confidence": 0.59
+  },
+  {
+    "event_id": "evt_5488c3d5",
+    "event_type": "incident_hitandrun",
+    "timestamp": "2026-09-27T05:37:40.178403Z",
+    "gps": {
+      "lat": 11.016005,
+      "lng": 76.957501
+    },
+    "bus_id": "BUS-7G-05",
+    "data": {
+      "plate_number": "TN39AB5678",
+      "incident_type": "Rash Driving"
+    },
+    "confidence": 0.58
+  },
+  {
+    "event_id": "evt_9d29ce92",
+    "event_type": "pedestrian_crossing",
+    "timestamp": "2026-09-27T05:36:40.178403Z",
+    "gps": {
+      "lat": 11.017521,
+      "lng": 76.954514
+    },
+    "bus_id": "BUS-7G-05",
+    "data": {
+      "description": "Pedestrian crossing at Gandhipuram signal"
+    },
+    "confidence": 0.83
+  },
+  {
+    "event_id": "evt_f2d3af6f",
+    "event_type": "pedestrian_crossing",
+    "timestamp": "2026-09-27T05:58:40.178403Z",
+    "gps": {
+      "lat": 11.017479,
+      "lng": 76.954496
+    },
+    "bus_id": "BUS-7G-01",
+    "data": {
+      "description": "Pedestrian crossing at Gandhipuram signal"
+    },
+    "confidence": 0.84
+  },
+  {
+    "event_id": "evt_0ce0dc12",
+    "event_type": "pedestrian_crossing",
+    "timestamp": "2026-09-27T05:33:40.178403Z",
+    "gps": {
+      "lat": 11.01752,
+      "lng": 76.954487
+    },
+    "bus_id": "BUS-7G-03",
+    "data": {
+      "description": "Pedestrian crossing at Gandhipuram signal"
+    },
+    "confidence": 0.76
+  },
+  {
+    "event_id": "evt_7900e3f4",
+    "event_type": "pedestrian_crossing",
+    "timestamp": "2026-09-27T06:00:40.178403Z",
+    "gps": {
+      "lat": 11.019018,
+      "lng": 76.9565
+    },
+    "bus_id": "BUS-7G-05",
+    "data": {
+      "description": "School zone crossing on Cross Cut Road"
+    },
+    "confidence": 0.87
+  },
+  {
+    "event_id": "evt_7e19619c",
+    "event_type": "pedestrian_crossing",
+    "timestamp": "2026-09-27T05:56:40.178403Z",
+    "gps": {
+      "lat": 11.019014,
+      "lng": 76.956502
+    },
+    "bus_id": "BUS-7G-01",
+    "data": {
+      "description": "School zone crossing on Cross Cut Road"
+    },
+    "confidence": 0.7
+  },
+  {
+    "event_id": "evt_ce2192f3",
+    "event_type": "pedestrian_crossing",
+    "timestamp": "2026-09-27T06:12:40.178403Z",
+    "gps": {
+      "lat": 11.015523,
+      "lng": 76.95202
+    },
+    "bus_id": "BUS-7G-05",
+    "data": {
+      "description": "Unmarked crossing near Townhall"
+    },
+    "confidence": 0.77
+  },
+  {
+    "event_id": "evt_5e2933e7",
+    "event_type": "pedestrian_crossing",
+    "timestamp": "2026-09-27T06:00:40.178403Z",
+    "gps": {
+      "lat": 11.015486,
+      "lng": 76.951986
+    },
+    "bus_id": "BUS-7G-03",
+    "data": {
+      "description": "Unmarked crossing near Townhall"
+    },
+    "confidence": 0.86
+  },
+  {
+    "event_id": "evt_6e277143",
+    "event_type": "pothole",
+    "timestamp": "2026-09-27T05:32:40.178403Z",
+    "gps": {
+      "lat": 11.016779,
+      "lng": 76.955813
+    },
+    "bus_id": "BUS-7G-01",
+    "data": {
+      "severity_hint": "large",
+      "description": "Deep pothole near Gandhipuram bus stand"
+    },
+    "confidence": 0.76
+  },
+  {
+    "event_id": "evt_e7430cae",
+    "event_type": "pothole",
+    "timestamp": "2026-09-27T05:42:40.178403Z",
+    "gps": {
+      "lat": 11.016796,
+      "lng": 76.955775
+    },
+    "bus_id": "BUS-7G-05",
+    "data": {
+      "severity_hint": "large",
+      "description": "Deep pothole near Gandhipuram bus stand"
+    },
+    "confidence": 0.84
+  },
+  {
+    "event_id": "evt_4f977d76",
+    "event_type": "pothole",
+    "timestamp": "2026-09-27T05:47:40.178403Z",
+    "gps": {
+      "lat": 11.016806,
+      "lng": 76.955803
+    },
+    "bus_id": "BUS-7G-03",
+    "data": {
+      "severity_hint": "large",
+      "description": "Deep pothole near Gandhipuram bus stand"
+    },
+    "confidence": 0.75
+  },
+  {
+    "event_id": "evt_b0fd7fcd",
+    "event_type": "pothole",
+    "timestamp": "2026-09-27T05:35:40.178403Z",
+    "gps": {
+      "lat": 11.016802,
+      "lng": 76.955785
+    },
+    "bus_id": "BUS-7G-02",
+    "data": {
+      "severity_hint": "large",
+      "description": "Deep pothole near Gandhipuram bus stand"
+    },
+    "confidence": 0.88
+  },
+  {
+    "event_id": "evt_e527d80f",
+    "event_type": "pothole",
+    "timestamp": "2026-09-27T05:28:40.178403Z",
+    "gps": {
+      "lat": 11.01682,
+      "lng": 76.955814
+    },
+    "bus_id": "BUS-7G-04",
+    "data": {
+      "severity_hint": "large",
+      "description": "Deep pothole near Gandhipuram bus stand"
+    },
+    "confidence": 0.85
+  },
+  {
+    "event_id": "evt_aff8dbdd",
+    "event_type": "pothole",
+    "timestamp": "2026-09-27T05:31:40.178403Z",
+    "gps": {
+      "lat": 11.018491,
+      "lng": 76.957178
+    },
+    "bus_id": "BUS-7G-04",
+    "data": {
+      "severity_hint": "medium",
+      "description": "Road damage on Avinashi Road"
+    },
+    "confidence": 0.74
+  },
+  {
+    "event_id": "evt_e34aa65d",
+    "event_type": "pothole",
+    "timestamp": "2026-09-27T05:25:40.178403Z",
+    "gps": {
+      "lat": 11.018492,
+      "lng": 76.957187
+    },
+    "bus_id": "BUS-7G-03",
+    "data": {
+      "severity_hint": "medium",
+      "description": "Road damage on Avinashi Road"
+    },
+    "confidence": 0.72
+  },
+  {
+    "event_id": "evt_acdf40ad",
+    "event_type": "pothole",
+    "timestamp": "2026-09-27T05:50:40.178403Z",
+    "gps": {
+      "lat": 11.018502,
+      "lng": 76.957226
+    },
+    "bus_id": "BUS-7G-02",
+    "data": {
+      "severity_hint": "medium",
+      "description": "Road damage on Avinashi Road"
+    },
+    "confidence": 0.71
+  },
+  {
+    "event_id": "evt_dffe9fe6",
+    "event_type": "pothole",
+    "timestamp": "2026-09-27T05:34:40.178403Z",
+    "gps": {
+      "lat": 11.014177,
+      "lng": 76.953509
+    },
+    "bus_id": "BUS-7G-01",
+    "data": {
+      "severity_hint": "large",
+      "description": "Crater near Town Hall junction"
+    },
+    "confidence": 0.84
+  },
+  {
+    "event_id": "evt_379c5e28",
+    "event_type": "pothole",
+    "timestamp": "2026-09-27T06:14:40.178403Z",
+    "gps": {
+      "lat": 11.014219,
+      "lng": 76.95352
+    },
+    "bus_id": "BUS-7G-03",
+    "data": {
+      "severity_hint": "large",
+      "description": "Crater near Town Hall junction"
+    },
+    "confidence": 0.89
+  },
+  {
+    "event_id": "evt_9032532b",
+    "event_type": "pothole",
+    "timestamp": "2026-09-27T05:50:40.178403Z",
+    "gps": {
+      "lat": 11.014207,
+      "lng": 76.953493
+    },
+    "bus_id": "BUS-7G-04",
+    "data": {
+      "severity_hint": "large",
+      "description": "Crater near Town Hall junction"
+    },
+    "confidence": 0.8
+  },
+  {
+    "event_id": "evt_fc51610c",
+    "event_type": "pothole",
+    "timestamp": "2026-09-27T06:06:40.178403Z",
+    "gps": {
+      "lat": 11.014209,
+      "lng": 76.953511
+    },
+    "bus_id": "BUS-7G-02",
+    "data": {
+      "severity_hint": "large",
+      "description": "Crater near Town Hall junction"
+    },
+    "confidence": 0.79
+  },
+  {
+    "event_id": "evt_bdf4b68d",
+    "event_type": "pothole",
+    "timestamp": "2026-09-27T06:02:40.178403Z",
+    "gps": {
+      "lat": 11.020126,
+      "lng": 76.951008
+    },
+    "bus_id": "BUS-7G-01",
+    "data": {
+      "severity_hint": "small",
+      "description": "Surface crack on DB Road"
+    },
+    "confidence": 0.82
+  },
+  {
+    "event_id": "evt_373b2125",
+    "event_type": "pothole",
+    "timestamp": "2026-09-27T05:36:40.178403Z",
+    "gps": {
+      "lat": 11.020091,
+      "lng": 76.951014
+    },
+    "bus_id": "BUS-7G-02",
+    "data": {
+      "severity_hint": "small",
+      "description": "Surface crack on DB Road"
+    },
+    "confidence": 0.84
+  },
+  {
+    "event_id": "evt_ebab7b2f",
+    "event_type": "pothole",
+    "timestamp": "2026-09-27T05:27:40.178403Z",
+    "gps": {
+      "lat": 11.020075,
+      "lng": 76.95099
+    },
+    "bus_id": "BUS-7G-03",
+    "data": {
+      "severity_hint": "small",
+      "description": "Surface crack on DB Road"
+    },
+    "confidence": 0.71
+  },
+  {
+    "event_id": "evt_28d571b8",
+    "event_type": "pothole",
+    "timestamp": "2026-09-27T06:06:40.178403Z",
+    "gps": {
+      "lat": 11.020122,
+      "lng": 76.951004
+    },
+    "bus_id": "BUS-7G-05",
+    "data": {
+      "severity_hint": "small",
+      "description": "Surface crack on DB Road"
+    },
+    "confidence": 0.77
+  },
+  {
+    "event_id": "evt_849e145e",
+    "event_type": "pothole",
+    "timestamp": "2026-09-27T06:06:40.178403Z",
+    "gps": {
+      "lat": 11.020108,
+      "lng": 76.950994
+    },
+    "bus_id": "BUS-7G-04",
+    "data": {
+      "severity_hint": "small",
+      "description": "Surface crack on DB Road"
+    },
+    "confidence": 0.88
+  },
+  {
+    "event_id": "evt_a2e2c523",
+    "event_type": "pothole",
+    "timestamp": "2026-09-27T05:45:40.178403Z",
+    "gps": {
+      "lat": 11.012487,
+      "lng": 76.959005
+    },
+    "bus_id": "BUS-7G-04",
+    "data": {
+      "severity_hint": "medium",
+      "description": "Pothole near RS Puram bus stop"
+    },
+    "confidence": 0.89
+  },
+  {
+    "event_id": "evt_3026ad3c",
+    "event_type": "pothole",
+    "timestamp": "2026-09-27T05:54:40.178403Z",
+    "gps": {
+      "lat": 11.012493,
+      "lng": 76.959027
+    },
+    "bus_id": "BUS-7G-02",
+    "data": {
+      "severity_hint": "medium",
+      "description": "Pothole near RS Puram bus stop"
+    },
+    "confidence": 0.92
+  },
+  {
+    "event_id": "evt_2ab91831",
+    "event_type": "pothole",
+    "timestamp": "2026-09-27T05:48:40.178403Z",
+    "gps": {
+      "lat": 11.012478,
+      "lng": 76.958976
+    },
+    "bus_id": "BUS-7G-05",
+    "data": {
+      "severity_hint": "medium",
+      "description": "Pothole near RS Puram bus stop"
+    },
+    "confidence": 0.73
+  },
+  {
+    "event_id": "evt_28a63ca8",
+    "event_type": "pothole",
+    "timestamp": "2026-09-27T05:39:40.178403Z",
+    "gps": {
+      "lat": 11.012482,
+      "lng": 76.95901
+    },
+    "bus_id": "BUS-7G-01",
+    "data": {
+      "severity_hint": "medium",
+      "description": "Pothole near RS Puram bus stop"
+    },
+    "confidence": 0.73
+  },
+  {
+    "event_id": "evt_396991f0",
+    "event_type": "pothole",
+    "timestamp": "2026-09-27T05:55:40.178403Z",
+    "gps": {
+      "lat": 11.012494,
+      "lng": 76.959027
+    },
+    "bus_id": "BUS-7G-03",
+    "data": {
+      "severity_hint": "medium",
+      "description": "Pothole near RS Puram bus stop"
+    },
+    "confidence": 0.85
+  },
+  {
+    "event_id": "evt_b551435a",
+    "event_type": "vehicle_count",
+    "timestamp": "2026-09-27T05:31:40.178403Z",
+    "gps": {
+      "lat": 11.019471,
+      "lng": 76.949836
+    },
+    "bus_id": "BUS-7G-01",
+    "data": {
+      "vehicle_count": 10,
+      "description": "Traffic density measurement"
+    },
+    "confidence": 0.89
+  },
+  {
+    "event_id": "evt_3dee5acb",
+    "event_type": "vehicle_count",
+    "timestamp": "2026-09-27T05:24:40.178403Z",
+    "gps": {
+      "lat": 11.016603,
+      "lng": 76.958494
+    },
+    "bus_id": "BUS-7G-01",
+    "data": {
+      "vehicle_count": 24,
+      "description": "Traffic density measurement"
+    },
+    "confidence": 0.83
+  },
+  {
+    "event_id": "evt_502ba39d",
+    "event_type": "vehicle_count",
+    "timestamp": "2026-09-27T06:00:40.178403Z",
+    "gps": {
+      "lat": 11.019284,
+      "lng": 76.956562
+    },
+    "bus_id": "BUS-7G-01",
+    "data": {
+      "vehicle_count": 30,
+      "description": "Traffic density measurement"
+    },
+    "confidence": 0.92
+  },
+  {
+    "event_id": "evt_a0e85446",
+    "event_type": "vehicle_count",
+    "timestamp": "2026-09-27T06:05:40.178403Z",
+    "gps": {
+      "lat": 11.013711,
+      "lng": 76.95797
+    },
+    "bus_id": "BUS-7G-01",
+    "data": {
+      "vehicle_count": 15,
+      "description": "Traffic density measurement"
+    },
+    "confidence": 0.88
+  },
+  {
+    "event_id": "evt_e8fca155",
+    "event_type": "vehicle_count",
+    "timestamp": "2026-09-27T06:16:40.178403Z",
+    "gps": {
+      "lat": 11.012287,
+      "lng": 76.951224
+    },
+    "bus_id": "BUS-7G-02",
+    "data": {
+      "vehicle_count": 28,
+      "description": "Traffic density measurement"
+    },
+    "confidence": 0.81
+  },
+  {
+    "event_id": "evt_4b36a31d",
+    "event_type": "vehicle_count",
+    "timestamp": "2026-09-27T05:48:40.178403Z",
+    "gps": {
+      "lat": 11.018581,
+      "lng": 76.949689
+    },
+    "bus_id": "BUS-7G-02",
+    "data": {
+      "vehicle_count": 29,
+      "description": "Traffic density measurement"
+    },
+    "confidence": 0.84
+  },
+  {
+    "event_id": "evt_116fa7fc",
+    "event_type": "vehicle_count",
+    "timestamp": "2026-09-27T05:49:40.178403Z",
+    "gps": {
+      "lat": 11.019372,
+      "lng": 76.954694
+    },
+    "bus_id": "BUS-7G-02",
+    "data": {
+      "vehicle_count": 33,
+      "description": "Traffic density measurement"
+    },
+    "confidence": 0.89
+  },
+  {
+    "event_id": "evt_d152dfb7",
+    "event_type": "vehicle_count",
+    "timestamp": "2026-09-27T05:24:40.178403Z",
+    "gps": {
+      "lat": 11.010982,
+      "lng": 76.95332
+    },
+    "bus_id": "BUS-7G-02",
+    "data": {
+      "vehicle_count": 22,
+      "description": "Traffic density measurement"
+    },
+    "confidence": 0.88
+  },
+  {
+    "event_id": "evt_c0daca35",
+    "event_type": "vehicle_count",
+    "timestamp": "2026-09-27T06:13:40.178403Z",
+    "gps": {
+      "lat": 11.010971,
+      "lng": 76.953009
+    },
+    "bus_id": "BUS-7G-03",
+    "data": {
+      "vehicle_count": 35,
+      "description": "Traffic density measurement"
+    },
+    "confidence": 0.86
+  },
+  {
+    "event_id": "evt_fda5f4a6",
+    "event_type": "vehicle_count",
+    "timestamp": "2026-09-27T05:24:40.178403Z",
+    "gps": {
+      "lat": 11.014509,
+      "lng": 76.953216
+    },
+    "bus_id": "BUS-7G-03",
+    "data": {
+      "vehicle_count": 15,
+      "description": "Traffic density measurement"
+    },
+    "confidence": 0.85
+  },
+  {
+    "event_id": "evt_556fc4b0",
+    "event_type": "vehicle_count",
+    "timestamp": "2026-09-27T05:26:40.178403Z",
+    "gps": {
+      "lat": 11.018587,
+      "lng": 76.954481
+    },
+    "bus_id": "BUS-7G-03",
+    "data": {
+      "vehicle_count": 25,
+      "description": "Traffic density measurement"
+    },
+    "confidence": 0.81
+  },
+  {
+    "event_id": "evt_b8096e5a",
+    "event_type": "vehicle_count",
+    "timestamp": "2026-09-27T06:06:40.178403Z",
+    "gps": {
+      "lat": 11.017555,
+      "lng": 76.951386
+    },
+    "bus_id": "BUS-7G-03",
+    "data": {
+      "vehicle_count": 23,
+      "description": "Traffic density measurement"
+    },
+    "confidence": 0.87
+  },
+  {
+    "event_id": "evt_c4dc1c4f",
+    "event_type": "vehicle_count",
+    "timestamp": "2026-09-27T05:29:40.178403Z",
+    "gps": {
+      "lat": 11.013787,
+      "lng": 76.958849
+    },
+    "bus_id": "BUS-7G-04",
+    "data": {
+      "vehicle_count": 33,
+      "description": "Traffic density measurement"
+    },
+    "confidence": 0.85
+  },
+  {
+    "event_id": "evt_da3e7305",
+    "event_type": "vehicle_count",
+    "timestamp": "2026-09-27T05:48:40.178403Z",
+    "gps": {
+      "lat": 11.019555,
+      "lng": 76.958943
+    },
+    "bus_id": "BUS-7G-04",
+    "data": {
+      "vehicle_count": 30,
+      "description": "Traffic density measurement"
+    },
+    "confidence": 0.9
+  },
+  {
+    "event_id": "evt_974ad962",
+    "event_type": "vehicle_count",
+    "timestamp": "2026-09-27T06:16:40.178403Z",
+    "gps": {
+      "lat": 11.015796,
+      "lng": 76.954422
+    },
+    "bus_id": "BUS-7G-05",
+    "data": {
+      "vehicle_count": 9,
+      "description": "Traffic density measurement"
+    },
+    "confidence": 0.93
+  },
+  {
+    "event_id": "evt_42919c59",
+    "event_type": "vehicle_count",
+    "timestamp": "2026-09-27T05:25:40.178403Z",
+    "gps": {
+      "lat": 11.01851,
+      "lng": 76.950579
+    },
+    "bus_id": "BUS-7G-05",
+    "data": {
+      "vehicle_count": 10,
+      "description": "Traffic density measurement"
+    },
+    "confidence": 0.97
+  }
+]

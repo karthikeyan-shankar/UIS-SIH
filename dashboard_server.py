@@ -7,7 +7,16 @@ import json
 import os
 import glob
 from flask import Flask, jsonify, render_template, send_from_directory
-from integration_pipeline import run_pipeline_and_return
+
+# On deployment servers (Render/Heroku) ultralytics/opencv are not installed.
+# The dashboard serves from pre-committed JSON data files — pipeline only runs locally.
+try:
+    from integration_pipeline import run_pipeline_and_return
+    PIPELINE_AVAILABLE = True
+except ImportError:
+    PIPELINE_AVAILABLE = False
+    def run_pipeline_and_return():
+        return {"error": "Pipeline not available on this server. Run locally and push data."}
 
 app = Flask(__name__, template_folder='templates')
 
@@ -113,7 +122,7 @@ def api_stats():
         'ranked_count': len(ranked),
         'incident_count': len(incidents),
         'critical_count': critical,
-        'bus_count': len(buses),
+        'bus_count': 1,
         'event_type_breakdown': type_counts,
         'incidents': incidents
     })
@@ -130,6 +139,24 @@ def api_run_pipeline():
 
 
 # ──────────────────────────── Run ──────────────────────────────
+
+
+@app.route('/api/reset', methods=['POST'])
+def api_reset():
+    try:
+        for folder in ['raw', 'confirmed', 'ranked']:
+            folder_path = os.path.join(BASE_DIR, folder)
+            if os.path.exists(folder_path):
+                import glob
+                for filepath in glob.glob(os.path.join(folder_path, '*.json')):
+                    try:
+                        os.remove(filepath)
+                    except:
+                        pass
+        return jsonify({'status': 'success', 'message': 'All data cleared'})
+    except Exception as e:
+        return jsonify({'status': 'error', 'message': str(e)}), 500
+
 
 if __name__ == '__main__':
     print("=" * 60)

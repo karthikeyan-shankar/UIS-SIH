@@ -1,29 +1,40 @@
-# Virtual Environments
-venv/
-env/
-ENV/
-*.venv
-
-# Python Bytecode & Cache
+# Python
 __pycache__/
 *.py[cod]
-*$py.class
-.pytest_cache/
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+venv/
+env/
+.env
 
-# Large Model Weights (Downloaded automatically on first run)
+# Large model files
 *.pt
-*.engine
+*.pth
 *.onnx
+*.weights
 
-# Temporary data / output caches
-raw/
-confirmed/
-ranked/
-outbox/
-*.log
+# Demo video files
+*.mp4
+*.avi
+*.mov
+*.mkv
 
-# IDE & OS files
-.vscode/
-.idea/
+# Temp / scratch files
+fix.py
+fix2.py
+fix3.py
+fix4.py
+final_patch.py
+final_remove.py
+
+# Abandoned pothole real demo
+pothole_real_demo/
+temp_pothole_repo/
+
+# OS
 .DS_Store
 Thumbs.db
